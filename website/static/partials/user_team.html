@@ -1,0 +1,115 @@
+<div class="container">
+	<header>
+		<p>{{teamName}}</p>
+		<hr>
+		<div class="row">
+			<p class="col-md-3">My Squad</p>
+			<button type="button" class="btn btn-primary btn-sm col-md-1" data-toggle="modal" data-target="#AddPlayerModal">
+			 Add a player <span class="glyphicon glyphicon-plus"> </span>
+			</button>
+		</div>
+		<hr>
+		
+	</header>
+	<div>
+		<div class="well well-sm col-md-5" style="margin: 20px;" ng-repeat="player in players">
+			<div class="col-md-6">
+				<h3>{{player.name}}</h3>
+				<p>{{player.position}} , {{player.realLife_team}}</p>
+			</div>
+			<div class="col-md-4 col-md-offset-1" style="margin-top:20px;">
+			<div class="">
+				<div class="" style="margin-bottom:10px;margin-left:30px"><span class="glyphicon glyphicon-plane"> {{player.country}}</span></div>
+				<div class="btn-group" role="group" aria-label="...">
+				  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#EditPlayerModal" ng-click="editPlayer($index)">Edit</button>
+				  <button type="button" class="btn btn-default">Delete</button>
+				</div>
+			</div>	
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<!-- Button trigger modal -->
+		
+
+		<!-- Modal -->
+		<div class="modal fade" id="AddPlayerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Your Player</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form name="form">
+				    	<!-- {{ form }} -->
+				    <div class="form-group row">
+				    	<label class="col-md-4" for="name">Player's name: </label>
+				    	<input class="col-md-5" id="name" type="text" name="name" ng-model="name">
+				    </div>
+				    <div class="form-group row">
+				    	<label class="col-md-4" for="position">Player's position: </label>
+				    	<input class="col-md-5" id="position" type="text" name="position" ng-model="position">
+				    </div>
+				    <div class="form-group row">
+				    	<label class="col-md-4" for="country">Country: </label>
+				    	<input class="col-md-5" id="country" type="text" name="country" ng-model="country">
+				    </div>
+				    <div class="form-group row">
+				    	<label class="col-md-4" for="realLifeTeam">Real Life Team: </label>
+				    	<input class="col-md-5" id="realLifeTeam" type="text" name="realLifeTeam" ng-model="realLifeTeam">
+				    </div>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary" ng-click="addPlayer()" data-dismiss="modal">Submit</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="EditPlayerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">Your Player</h4>
+		      </div>
+		      <div class="modal-body">
+		        <form name="form">
+				    	<!-- {{ form }} -->
+				    <div class="form-group row">
+				    	<label class="col-md-4" for="name">Player's name: </label>
+				    	<input class="col-md-5" id="name" type="text" name="name" ng-model="nametoEdit">
+				    </div>
+				    <div class="form-group row">
+				    	<label class="col-md-4" for="position">Player's position: </label>
+				    	<input class="col-md-5" id="position" type="text" name="position" ng-model="positiontoEdit">
+				    </div>
+				    <div class="form-group row">
+				    	<label class="col-md-4" for="country">Country: </label>
+				    	<input class="col-md-5" id="country" type="text" name="country" ng-model="countrytoEdit">
+				    </div>
+				    <div class="form-group row">
+				    	<label class="col-md-4" for="realLifeTeam">Real Life Team: </label>
+				    	<input class="col-md-5" id="realLifeTeam" type="text" name="realLifeTeam" ng-model="realLifeTeamtoEdit">
+				    </div>
+				</form>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        <button type="button" class="btn btn-primary" ng-click="saveEditedPlayer()" data-dismiss="modal">Submit</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+
+</div>

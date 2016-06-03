@@ -1,0 +1,17 @@
+
+
+<form ng-conttroller="TeamController" name="form">
+    	<!-- {{ form }} -->
+    <label for="username">Your username: </label>
+    <input id="username" type="text" name="username" ng-model="username">
+    <label for="email">Your email: </label>
+    <input id="email" type="text" name="email" ng-model="email">
+    <label for="password">Your Password: </label>
+    <input id="password" type="password" name="password" ng-model="password">
+    <input type="submit" value="OK">
+	<button ng-click="submit()">Submit</button>
+
+	<p>{{username}}</p>
+	<p>{{email}}</p>
+</form>
+

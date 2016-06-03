@@ -1,0 +1,31 @@
+
+<div class="jumbotron" style="background:url('static/stadium.jpg') no-repeat center center;height: 500px;">
+	
+</div>
+
+<div class="container col-lg-6" style="height:300px;">
+	Search: <input ng-model="query">
+	<select ng-model="order">
+		<option value="name">Name</option>
+		<option vlaue="country">Country</option>
+	</select>
+	<ul>
+	{% verbatim %}
+		<li ng-repeat="team in teams | filter:query | orderBy: order">
+			<span>{{team.name}}</span>
+			<span>{{team.country}}</span>
+		</li>
+	{% endverbatim %}
+	</ul>
+</div>
+
+<div class="col-lg-6">
+	<h2>Create an account or Sign In</h2>
+	<ul style="">
+		<li><a href="#/login">Log In</a></li>
+		<li><a href="#/logout">Log Out</a></li>
+		<li><a href="#/signup">Sign Up</a></li>
+	</ul>
+	
+	
+</div>
